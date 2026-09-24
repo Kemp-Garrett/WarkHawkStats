@@ -1,0 +1,258 @@
+:root {
+  --talon-orange: #F26522;
+  --talon-orange-dark: #D9541A;
+  --talon-black: #121212;
+  --talon-charcoal: #2B2D31;
+  --talon-aluminum: #8A9099;
+  --talon-bone: #F5F1E8;
+  --talon-line: #D3D1C7;
+  --talon-muted: #5F5E5A;
+  /* bslib reads these for the navbar background */
+  --bslib-navbar-default-bg: #121212;
+  --bslib-navbar-inverse-bg: #121212;
+}
+
+/* Navbar ----------------------------------------------------------------- */
+.navbar,
+.navbar.navbar-default,
+.navbar.navbar-inverse {
+  background-color: var(--talon-black) !important;
+  border-bottom: 3px solid var(--talon-orange);
+}
+.navbar .nav-link {
+  color: var(--talon-bone) !important;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--talon-orange) !important;
+}
+.navbar .navbar-toggler {
+  border-color: var(--talon-aluminum);
+}
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F5F1E8' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+.talon-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.talon-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: var(--talon-orange);
+  color: var(--talon-black);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.talon-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.talon-name {
+  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: var(--talon-bone);
+}
+.talon-subtitle {
+  font-size: 0.72rem;
+  color: var(--talon-aluminum);
+}
+
+/* Page layout ------------------------------------------------------------ */
+.talon-home,
+.talon-placeholder {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+.talon-section-title {
+  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  margin: 1.5rem 0 0.6rem;
+}
+.talon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .talon-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .talon-grid.talon-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Next game briefing ----------------------------------------------------- */
+.talon-briefing {
+  background: var(--talon-charcoal);
+  color: var(--talon-bone);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  border-left: 5px solid var(--talon-orange);
+}
+.talon-briefing-label {
+  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
+  color: var(--talon-orange);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.2rem;
+}
+.talon-briefing-title {
+  font-size: 1.6rem;
+  color: var(--talon-bone);
+  margin: 0 0 0.35rem;
+}
+.talon-briefing-meta {
+  color: #B4B2A9;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.talon-briefing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.9rem;
+}
+.btn-talon-primary {
+  background: var(--talon-orange);
+  border: 1px solid var(--talon-orange);
+  color: var(--talon-black);
+  font-weight: 500;
+}
+.btn-talon-primary:hover,
+.btn-talon-primary:focus {
+  background: var(--talon-orange-dark);
+  border-color: var(--talon-orange-dark);
+  color: var(--talon-black);
+}
+.btn-talon-ghost {
+  background: transparent;
+  border: 1px solid var(--talon-aluminum);
+  color: var(--talon-bone);
+}
+.btn-talon-ghost:hover,
+.btn-talon-ghost:focus {
+  background: rgba(245, 241, 232, 0.08);
+  border-color: var(--talon-bone);
+  color: var(--talon-bone);
+}
+
+/* Stat cards ------------------------------------------------------------- */
+.talon-stat {
+  background: #fff;
+  border: 1px solid var(--talon-line);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.talon-stat-label {
+  font-size: 0.78rem;
+  color: var(--talon-muted);
+}
+.talon-stat-value {
+  font-family: "Roboto Mono", Consolas, Menlo, monospace;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--talon-black);
+}
+.talon-stat-extra {
+  font-size: 0.8rem;
+  color: var(--talon-muted);
+  margin-left: 6px;
+}
+
+/* Section tiles ---------------------------------------------------------- */
+a.talon-tile {
+  background: #fff;
+  border: 1px solid var(--talon-line);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--talon-black);
+  transition: border-color 0.15s ease;
+}
+a.talon-tile:hover {
+  border-color: var(--talon-orange);
+  color: var(--talon-black);
+}
+a.talon-tile:focus-visible,
+.talon-briefing .btn:focus-visible {
+  outline: 2px solid var(--talon-orange);
+  outline-offset: 2px;
+}
+.talon-tile-icon {
+  color: var(--talon-orange);
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+.talon-tile-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.talon-tile-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.talon-tile-blurb {
+  font-size: 0.78rem;
+  color: var(--talon-muted);
+}
+
+/* Placeholder pages ------------------------------------------------------ */
+.talon-placeholder h1 {
+  font-size: 1.6rem;
+}
+.talon-muted {
+  color: var(--talon-muted);
+}
+
+/* Footer ----------------------------------------------------------------- */
+.talon-footer {
+  background: var(--talon-black);
+  color: var(--talon-aluminum);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+.talon-footer-tag {
+  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
+  color: var(--talon-orange);
+  letter-spacing: 0.05em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.talon-tile { transition: none; }
+}
+
+/* Older bslib versions render the menu button with bar spans */
+.navbar .navbar-toggle,
+.navbar .navbar-toggler {
+  border-color: var(--talon-aluminum) !important;
+}
+.navbar .navbar-toggle .icon-bar {
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F5F1E8' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.talon-logo {
+  height: 40px;
+  width: auto;
+}
