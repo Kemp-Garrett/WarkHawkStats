@@ -256,3 +256,80 @@ a.talon-tile:focus-visible,
   height: 40px;
   width: auto;
 }
+
+/* Larger screens: scale type and spacing up so the page fills a monitor */
+@media (min-width: 1200px) {
+  html { font-size: 17px; }
+  .talon-home, .talon-placeholder { padding: 1.75rem 1rem 2.5rem; }
+  .talon-briefing { padding: 1.5rem 1.75rem; }
+  .talon-briefing-title { font-size: 2.1rem; }
+  .talon-briefing-meta { font-size: 1rem; }
+  .talon-section-title { font-size: 1.3rem; margin-top: 2rem; }
+  .talon-grid { gap: 14px; }
+  .talon-stat { padding: 1rem 1.2rem; }
+  .talon-stat-label { font-size: 0.9rem; }
+  .talon-stat-value { font-size: 1.9rem; }
+  a.talon-tile { padding: 1.1rem 1.2rem; gap: 14px; }
+  .talon-tile-icon { font-size: 1.6rem; width: 2rem; }
+  .talon-tile-title { font-size: 1.1rem; }
+  .talon-tile-blurb { font-size: 0.88rem; }
+}
+@media (min-width: 1800px) {
+  html { font-size: 19px; }
+  .talon-home, .talon-placeholder { max-width: 1500px; }
+}
+ 
+/* Login screen ----------------------------------------------------------- */
+.talon-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.talon-login-brand .talon-name {
+  color: var(--talon-black);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.talon-login-brand .talon-subtitle {
+  color: var(--talon-muted);
+}
+.talon-login-note {
+  font-size: 0.8rem;
+  color: var(--talon-muted);
+  margin: 1rem 0 0;
+}
+.panel-auth {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--talon-black) !important;
+  border: none !important;
+}
+.panel-auth .panel {
+  background: var(--talon-bone) !important;
+  border: none !important;
+  border-top: 5px solid var(--talon-orange) !important;
+  border-radius: 10px;
+  box-shadow: none !important;
+  padding: 0.5rem 0.25rem;
+}
+.panel-auth h3,
+.panel-auth .panel-heading {
+  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  color: var(--talon-black);
+}
+.panel-auth label {
+  font-weight: 500;
+  color: var(--talon-black);
+}
+.panel-auth input:focus {
+  border-color: var(--talon-orange) !important;
+  box-shadow: 0 0 0 2px rgba(242, 101, 34, 0.25) !important;
+}
+.panel-auth .btn-primary {
+  background: var(--talon-orange) !important;
+  border-color: var(--talon-orange) !important;
+  color: var(--talon-black) !important;
+  font-weight: 500;
+  width: 100%;
+}
