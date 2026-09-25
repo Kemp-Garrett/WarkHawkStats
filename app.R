@@ -74,6 +74,10 @@ if (!nzchar(dev_role)) ui <- secure_app(
     enable_admin = FALSE
   )
 
+section_ui_fns <- list(
+  playerhealth = playerhealth_ui
+)
+
 server <- function(input, output, session) {
   if (nzchar(dev_role)) {
     user_role <- reactive(dev_role)
@@ -95,9 +99,13 @@ server <- function(input, output, session) {
     s <- app_sections[i, ]
     output[[paste0("section_", s$id)]] <- renderUI({
       require_access(user_role, s$id)
-      section_placeholder(s$title, s$blurb)
+      ui_fn <- section_ui_fns[[s$id]]
+      if (is.null(ui_fn)) section_placeholder(s$title, s$blurb)
+      else ui_fn(paste0(s$id, "_mod"))
     })
   })
+  
+  playerhealth_server("playerhealth_mod", user_role)
   
   data_through <- home_server("home", parent_session = session,
                               user_role = user_role)
