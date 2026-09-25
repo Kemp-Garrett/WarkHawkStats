@@ -1,5 +1,5 @@
 .Rproj.user
-WarHawkStats.Rproj
+.Rproj
 .Rhistory
 .RData
 .Ruserdata
@@ -7,3 +7,4 @@ WarHawkStats.Rproj
 .DS_Store
 .quarto
 .Renviron
+WarkHawkStats.Rproj
