@@ -4,7 +4,6 @@
 library(shiny)
 library(bslib)
 library(shinymanager)
-library(rsconnect)
 
 # Placeholder page for sections that haven't been built yet
 section_placeholder <- function(title, blurb) {
